@@ -8,14 +8,14 @@ import (
 var rotasUsuarios = []Rota{
 	{
 		URI:                "/usuarios",
-		Metodo:             http.MethodPost,
-		Funcao:             controllers.CriarUsuario,
+		Metodo:             http.MethodGet,
+		Funcao:             controllers.BuscarUsuarios,
 		RequerAutenticacao: false,
 	},
 	{
 		URI:                "/usuarios",
-		Metodo:             http.MethodGet,
-		Funcao:             controllers.BuscarUsuarios,
+		Metodo:             http.MethodPost,
+		Funcao:             controllers.CriarUsuario,
 		RequerAutenticacao: false,
 	},
 	{

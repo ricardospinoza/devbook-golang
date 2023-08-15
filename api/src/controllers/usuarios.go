@@ -5,6 +5,7 @@ import (
 	"api/src/modelos"
 	"api/src/repositorios"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -12,7 +13,13 @@ import (
 
 // BuscarUsuarios recupera o usuario no banco
 func BuscarUsuarios(w http.ResponseWriter, r *http.Request) {
-	//w.Write([]byte("Bucandos todos os Usuário!"))
+	w.Write([]byte("Bucandos todos os Usuário!"))
+
+}
+
+// CriarUsuario insere no banco
+func CriarUsuario(w http.ResponseWriter, r *http.Request) {
+	//w.Write([]byte("Criando Usuário!"))
 	corpoRequest, erro := ioutil.ReadAll(r.Body)
 	if erro != nil {
 		log.Fatal(erro)
@@ -29,13 +36,13 @@ func BuscarUsuarios(w http.ResponseWriter, r *http.Request) {
 	}
 
 	repositorio := repositorios.NovoRepositorioDeUsuarios(db)
-	repositorio.Criar(usuario)
+	usuarioId, erro := repositorio.Criar(usuario)
+	if erro != nil {
+		log.Fatal(erro)
+	}
 
-}
+	w.Write([]byte(fmt.Sprintf("Id inserdio: %d", usuarioId)))
 
-// CriarUsuario insere no banco
-func CriarUsuario(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Criando Usuário!"))
 }
 
 // BuscarUsuario recupera o usuário especifico no banco

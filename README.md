@@ -29,5 +29,9 @@ https://www.udemy.com/course/aprenda-golang-do-zero-desenvolva-uma-aplicacao-com
 
     # leitura do arquivo .env
     github.com/joho/godotenv
+
+    #drive sql
+    github.com/go-sql-driver/mysql
+    
     
 

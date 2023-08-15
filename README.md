@@ -33,5 +33,7 @@ https://www.udemy.com/course/aprenda-golang-do-zero-desenvolva-uma-aplicacao-com
     #drive sql
     github.com/go-sql-driver/mysql
     
+    #validacao de email
+    github.com/badoux/checkmail
     
 

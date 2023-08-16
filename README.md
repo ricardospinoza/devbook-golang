@@ -35,5 +35,11 @@ https://www.udemy.com/course/aprenda-golang-do-zero-desenvolva-uma-aplicacao-com
     
     #validacao de email
     github.com/badoux/checkmail
+
+    #tratamento hash
+    golang.org/x/crypto/bcrypt
+
+    #jwt - json web token
+    github.com/dgrijalva/jwt-go
     
 
